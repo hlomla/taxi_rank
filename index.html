@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="simple-grid.css">
+</head>
+<script src="https://kit.fontawesome.com/059757b1b7.js" crossorigin="anonymous"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<title>Taxi Rank App</title>
+</head>
+
+<body>
+    <div x-data='container'>
+        <div class="row">
+            <div class="header">
+                <h1 style="background-color:#f4c95d; text-align: center;">Taxi Rank App</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="table">
+                <div class="col-12">
+                    <table id="taxis">
+                        <tr>
+                            <th>Departure</th>
+                            <th>Destination</th>
+                            <th>Passenger Actions</th>
+                            <th>Taxi Trips</th>
+                            <th>Taxi Fare</th>
+                            <th>Total Fare</th>
+                            <th>Taxis Available</th>
+                        </tr>
+
+                        <tr>
+                            <td> <strong>Cape Town</strong></span></td>
+                            <td> <strong>Kuilsriver</strong></span></td>
+                            <td>
+                                <button @click="passengerCountUp()"><i
+                                    class="fa-solid fa-circle-plus"></i></button>
+                                    <span x-text="count">      
+                                            
+                                    </span>
+                                    <button x-bind:disabled = "count <= 0" @click="passengerCountDown()"><i
+                                        class="fa-solid fa-circle-minus"></i></button>
+                                       </td>
+                            <td> 
+                              
+                                    <button  x-bind:disabled = "count < 5"  @click="leaveRank()"><i
+                                        class="leave">Leave</i></button>
+                                    <span x-text="trips"></span>
+                               
+                            </td>
+                            <!-- <td> <span x-text="Total">0</span></td>
+                            <td> <span x-text="Trips">0</span></td> -->
+                            <td> <span x-text="taxisAvail()"></span></td>
+
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="footer">
+                <div class="contact">
+                    <strong>Contact us at:</strong>
+                    (021)-541-1000
+
+                    <strong>twitter /fb /insta </strong> @taxi_app
+                </div>
+
+
+                <div class="address">
+                    Taxi Station
+                    <br>
+                    Drive Road
+                    <br>
+                    Taxi Town
+                    <br>
+                    7890
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
