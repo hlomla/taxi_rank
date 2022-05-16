@@ -7,7 +7,7 @@ document.addEventListener('alpine:init', () => {
             open: false,
             data: [{ }],
             count: 0,
-            taxiAvail: 4,
+            taxiAvail: 5,
             trips: 0,
 
             passengerCountUp(){
@@ -17,19 +17,20 @@ document.addEventListener('alpine:init', () => {
             return this.count--
             },
             taxisAvail(){
-            return this.taxiAvail
+                return this.taxiAvail
             },
             taxiTrips(){
-            return this.trips
+                return this.trips
             },
             leaveRank(){
-            return this.trips ++
+               this.count = this.count - 5
+                this.taxiAvail =  this.taxiAvail- 1
+                return this.trips ++
             },
-            decreaseTaxisAndPassengers(){
             
-            }
-            }
-    
+        }
+        
+        // this.count
 
 })
 })

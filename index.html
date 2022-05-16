@@ -26,7 +26,7 @@
                         <tr>
                             <th>Departure</th>
                             <th>Destination</th>
-                            <th>Passenger Actions</th>
+                            <th>Passenger Queue</th>
                             <th>Taxi Trips</th>
                             <th>Taxi Fare</th>
                             <th>Total Fare</th>
@@ -47,7 +47,7 @@
                                        </td>
                             <td> 
                               
-                                    <button  x-bind:disabled = "count < 5"  @click="leaveRank()"><i
+                                    <button x-bind:disabled = "count < 5"  @click="leaveRank()"><i
                                         class="leave">Leave</i></button>
                                     <span x-text="trips"></span>
                                
