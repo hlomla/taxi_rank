@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div x-data='container'>
+    <div class="container" x-data='container'>
         <div class="row">
             <div class="header">
                 <h1 style="background-color:#f4c95d; text-align: center;">Taxi Rank App</h1>
@@ -42,7 +42,7 @@
                                     <span x-text="count">      
                                             
                                     </span>
-                                    <button x-bind:disabled = "count <= 0" @click="passengerCountDown()"><i
+                                    <button x-bind:disabled = "count <= 0"  @click="passengerCountDown()"><i
                                         class="fa-solid fa-circle-minus"></i></button>
                                        </td>
                             <td> 
@@ -52,11 +52,61 @@
                                     <span x-text="trips"></span>
                                
                             </td>
-                            <!-- <td> <span x-text="Total">0</span></td>
-                            <td> <span x-text="Trips">0</span></td> -->
+                            <td> R<span x-text="price">0</span></td>
+                            <td> R<span x-text="">0</span></td>
                             <td> <span x-text="taxisAvail()"></span></td>
 
+                        </tr>  
+                        <tr>
+                            <td> <strong>Cape Town</strong></span></td>
+                            <td> <strong>Bellville</strong></span></td>
+                            <td>
+                                <button @click="passengerCountUpBell()"><i
+                                    class="fa-solid fa-circle-plus"></i></button>
+                                    <span x-text="count1">      
+                                            
+                                    </span>
+                                    <button x-bind:disabled = "count1 <= 0"  @click="passengerCountDownBell()"><i
+                                       name="bellville" class=" fa-solid fa-circle-minus"></i></button>
+                                       </td>
+                            <td> 
+                              
+                                    <button x-bind:disabled = "count1 < 5"  @click="leaveRankBell()"><i
+                                        class="leave">Leave</i></button>
+                                    <span x-text="trips1"></span>
+                               
+                            </td>
+                            <td> R<span x-text="price1">0</span></td>
+                            <td> R<span x-text="">0</span></td>
+                            <td> <span x-text="taxisAvailBell()"></span></td>
+
                         </tr>
+                        <tr>
+                            <td> <strong>Cape Town</strong></span></td>
+                            <td> <strong>Khayelitsha</strong></span></td>
+                            <td>
+                                <button @click="passengerCountUpK()"><i
+                                    class="fa-solid fa-circle-plus"></i></button>
+                                    <span x-text="count2">      
+                                            
+                                    </span>
+                                    <button x-bind:disabled = "count2 <= 0"  @click="passengerCountDownK()"><i
+                                       name="Khayelitsha" class=" fa-solid fa-circle-minus"></i></button>
+                                       </td>
+                            <td> 
+                              
+                                    <button x-bind:disabled = "count2 < 5"  @click="leaveRankK()"><i
+                                        class="leave">Leave</i></button>
+                                    <span x-text="trips2"></span>
+                               
+                            </td>
+                            <td> R<span x-text="price2">0</span></td>
+                            <td> R<span x-text="">0</span></td>
+                            <td> <span x-text="taxisAvailK()"></span></td>
+
+                        </tr>              
+              
+
                     </table>
                 </div>
             </div>
