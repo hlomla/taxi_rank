@@ -35,7 +35,12 @@ document.addEventListener('alpine:init', () => {
                this.count = this.count - 5
                 this.taxiAvail =  this.taxiAvail- 1
                 return this.trips ++
-            }, passengerCountUpBell(){
+            }, 
+            totalFare(){
+                
+                return this.price * this.count
+            },
+            passengerCountUpBell(){
                 return this.count1++
                 },
                 passengerCountDownBell(){

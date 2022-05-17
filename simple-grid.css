@@ -32,7 +32,7 @@ body {
   padding: 8px;
 }
 
-#taxis tr:nth-child(even){background-color: #f2f2f2;}
+#taxis tr:nth-child(even){background-color: #dd7230;}
 
 /* #taxis tr:hover {background-color: #ddd;} */
 
@@ -40,7 +40,7 @@ body {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #dd7230;
+  background-color: #2e1f27;
   color: white;
 }
 
@@ -57,11 +57,11 @@ body {
   background-color: #f4c95d;
 }
 /* Styling for  passenger actions */
-/* .fa-solid {
+.button {
   background-color: #03071e; 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 5px 4px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -69,12 +69,12 @@ body {
   margin: 4px 2px;
   border-radius: 12em;
   cursor: pointer;
-} */
+}
 /* ROOT FONT STYLES */
 
 * {
   font-family: 'Lato', Helvetica, sans-serif;
-  color: #333447;
+  color: white;
   line-height: 1.5;
 }
 

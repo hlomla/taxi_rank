@@ -37,23 +37,23 @@
                             <td> <strong>Cape Town</strong></span></td>
                             <td> <strong>Kuilsriver</strong></span></td>
                             <td>
-                                <button @click="passengerCountUp()"><i
+                                <button class="button" @click="passengerCountUp()"><i
                                     class="fa-solid fa-circle-plus"></i></button>
                                     <span x-text="count">      
                                             
                                     </span>
-                                    <button x-bind:disabled = "count <= 0"  @click="passengerCountDown()"><i
+                                    <button class="button" x-bind:disabled = "count <= 0"  @click="passengerCountDown()"><i
                                         class="fa-solid fa-circle-minus"></i></button>
                                        </td>
                             <td> 
                               
-                                    <button x-bind:disabled = "count < 5"  @click="leaveRank()"><i
+                                    <button class="button" x-bind:disabled = "count < 5"  @click="leaveRank()"><i
                                         class="leave">Leave</i></button>
                                     <span x-text="trips"></span>
                                
                             </td>
                             <td> R<span x-text="price">0</span></td>
-                            <td> R<span x-text="">0</span></td>
+                            <td> R<span x-text="totalFare()">0</span></td>
                             <td> <span x-text="taxisAvail()"></span></td>
 
                         </tr>  
@@ -61,17 +61,17 @@
                             <td> <strong>Cape Town</strong></span></td>
                             <td> <strong>Bellville</strong></span></td>
                             <td>
-                                <button @click="passengerCountUpBell()"><i
+                                <button class="button" @click="passengerCountUpBell()"><i
                                     class="fa-solid fa-circle-plus"></i></button>
                                     <span x-text="count1">      
                                             
                                     </span>
-                                    <button x-bind:disabled = "count1 <= 0"  @click="passengerCountDownBell()"><i
+                                    <button class="button" x-bind:disabled = "count1 <= 0"  @click="passengerCountDownBell()"><i
                                        name="bellville" class=" fa-solid fa-circle-minus"></i></button>
                                        </td>
                             <td> 
                               
-                                    <button x-bind:disabled = "count1 < 5"  @click="leaveRankBell()"><i
+                                    <button class="button" x-bind:disabled = "count1 < 5"  @click="leaveRankBell()"><i
                                         class="leave">Leave</i></button>
                                     <span x-text="trips1"></span>
                                
@@ -85,17 +85,17 @@
                             <td> <strong>Cape Town</strong></span></td>
                             <td> <strong>Khayelitsha</strong></span></td>
                             <td>
-                                <button @click="passengerCountUpK()"><i
+                                <button class="button" @click="passengerCountUpK()"><i
                                     class="fa-solid fa-circle-plus"></i></button>
                                     <span x-text="count2">      
                                             
                                     </span>
-                                    <button x-bind:disabled = "count2 <= 0"  @click="passengerCountDownK()"><i
+                                    <button class="button" x-bind:disabled = "count2 <= 0"  @click="passengerCountDownK()"><i
                                        name="Khayelitsha" class=" fa-solid fa-circle-minus"></i></button>
                                        </td>
                             <td> 
                               
-                                    <button x-bind:disabled = "count2 < 5"  @click="leaveRankK()"><i
+                                    <button class="button" x-bind:disabled = "count2 < 5"  @click="leaveRankK()"><i
                                         class="leave">Leave</i></button>
                                     <span x-text="trips2"></span>
                                
