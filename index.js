@@ -4,15 +4,23 @@ document.addEventListener('alpine:init', () => {
                 init() {
                     console.log("Hello World");
             
-                    this.inQueue = this.taxiLine.map(line =>{
-                        return new TaxiRank(line)
+                    this.routes = this.taxiRoutes.map(route =>{
+                        return new TaxiRoute(route.destination, route.price)
                     })
+                   
                 },
             
                 open: false,
-                taxiLine: ["Kuilsriver", "Bellville", "Khayelitsha", "Langa","Stellenbosch"],
+                taxiRoutes: [{destination: "Kuilsriver", price: 25},{destination: "Bellville", price: 20},{destination: "Khayelitsha", price: 18.50}, {destination: "Stellenbosch", price: 35}, {destination: "Langa", price: 15}],
                 inQueue:[],
-                total: 0
+                dailyTotal(){
+                    let total = 0;
+                    this.routes.forEach( route => { 
+                        total += route.totalFare()
+                    });
+                    return total
+                }
+                
             }
     })
     })

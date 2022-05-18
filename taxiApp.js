@@ -1,13 +1,12 @@
-class TaxiRank {
+class TaxiRoute {
 
     count = 0;
     taxiAvail = 5;
     trips = 0;
-    price = 25;
     overallTotal = 0;
-
-    constructor(rank){
-        this.rank = rank
+    constructor(rank, price){
+        this.rank = rank;
+        this.price = price;
     }
 
     passengerCountUp(){
@@ -25,15 +24,11 @@ class TaxiRank {
         leaveRank(){
            this.count = this.count - 5
             this.taxiAvail =  this.taxiAvail- 1
+            this.overallTotal += this.price * 5
             return this.trips ++
         }
         totalFare(){
-            this.trips 
-            this.taxiAvail
-            return this.price * this.trips
-        }
-        amountTotal4Taxis(){
-            this.overallTotal = this.price * 5 
-            return this.overallTotal  
+           
+            return this.overallTotal
         }
 }
