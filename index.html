@@ -19,6 +19,20 @@
                 <h1 style="background-color:#f4c95d; text-align: center;">Taxi Rank App</h1>
             </div>
         </div>
+        <template x-for="taxis in inQueue">
+        <div class="row">
+            <div class="totalAmount" x-show="
+            taxis.amountTotal4Taxis() ">
+                <span x-text="taxis.overallTotal"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="button">
+                <button @click=""><i
+                    class=""></i></button>
+            </div>
+        </div>
+    </template>
         <div class="row">
             <div class="table">
                 <div class="col-12">
@@ -32,81 +46,32 @@
                             <th>Total Fare</th>
                             <th>Taxis Available</th>
                         </tr>
-
-                        <tr>
-                            <td> <strong>Cape Town</strong></span></td>
-                            <td> <strong>Kuilsriver</strong></span></td>
-                            <td>
-                                <button class="button" @click="passengerCountUp()"><i
-                                    class="fa-solid fa-circle-plus"></i></button>
-                                    <span x-text="count">      
-                                            
-                                    </span>
-                                    <button class="button" x-bind:disabled = "count <= 0"  @click="passengerCountDown()"><i
-                                        class="fa-solid fa-circle-minus"></i></button>
-                                       </td>
-                            <td> 
-                              
-                                    <button class="button" x-bind:disabled = "count < 5"  @click="leaveRank()"><i
-                                        class="leave">Leave</i></button>
-                                    <span x-text="trips"></span>
-                               
-                            </td>
-                            <td> R<span x-text="price">0</span></td>
-                            <td> R<span x-text="totalFare()">0</span></td>
-                            <td> <span x-text="taxisAvail()"></span></td>
-
-                        </tr>  
-                        <tr>
-                            <td> <strong>Cape Town</strong></span></td>
-                            <td> <strong>Bellville</strong></span></td>
-                            <td>
-                                <button class="button" @click="passengerCountUpBell()"><i
-                                    class="fa-solid fa-circle-plus"></i></button>
-                                    <span x-text="count1">      
-                                            
-                                    </span>
-                                    <button class="button" x-bind:disabled = "count1 <= 0"  @click="passengerCountDownBell()"><i
-                                       name="bellville" class=" fa-solid fa-circle-minus"></i></button>
-                                       </td>
-                            <td> 
-                              
-                                    <button class="button" x-bind:disabled = "count1 < 5"  @click="leaveRankBell()"><i
-                                        class="leave">Leave</i></button>
-                                    <span x-text="trips1"></span>
-                               
-                            </td>
-                            <td> R<span x-text="price1">0</span></td>
-                            <td> R<span x-text="">0</span></td>
-                            <td> <span x-text="taxisAvailBell()"></span></td>
-
-                        </tr>
-                        <tr>
-                            <td> <strong>Cape Town</strong></span></td>
-                            <td> <strong>Khayelitsha</strong></span></td>
-                            <td>
-                                <button class="button" @click="passengerCountUpK()"><i
-                                    class="fa-solid fa-circle-plus"></i></button>
-                                    <span x-text="count2">      
-                                            
-                                    </span>
-                                    <button class="button" x-bind:disabled = "count2 <= 0"  @click="passengerCountDownK()"><i
-                                       name="Khayelitsha" class=" fa-solid fa-circle-minus"></i></button>
-                                       </td>
-                            <td> 
-                              
-                                    <button class="button" x-bind:disabled = "count2 < 5"  @click="leaveRankK()"><i
-                                        class="leave">Leave</i></button>
-                                    <span x-text="trips2"></span>
-                               
-                            </td>
-                            <td> R<span x-text="price2">0</span></td>
-                            <td> R<span x-text="">0</span></td>
-                            <td> <span x-text="taxisAvailK()"></span></td>
-
-                        </tr>              
-              
-
+                        <template x-for="taxis in inQueue">
+                            <tr>
+                                <td> <strong>Cape Town</strong></td>
+                                <td> <span  x-text="taxis.rank"></span> </td>
+                                <td>
+                                    <button class="button" @click="taxis.passengerCountUp()"><i
+                                        class="fa-solid fa-circle-plus"></i></button>
+                                        <span x-text="taxis.count">      
+                                                
+                                        </span>
+                                        <button class="button" x-bind:disabled = "taxis.count <= 0"  @click="taxis.passengerCountDown()"><i
+                                            class="fa-solid fa-circle-minus"></i></button>
+                                           </td>
+                                <td> 
+                                  
+                                        <button class="button" x-bind:disabled = "taxis.count < 5"  @click="taxis.leaveRank()"><i
+                                            class="leave">Leave</i></button>
+                                        <span x-text="taxis.trips"></span>
+                                   
+                                </td>
+                                <td> R<span x-text="taxis.price">0</span></td>
+                                <td> R<span x-text="taxis.totalFare()* 5">0</span></td>
+                                <td> <span x-text="taxis.taxisAvail()"></span></td>
+    
+                            </tr>  
+                        </template>
                     </table>
                 </div>
             </div>
@@ -121,7 +86,6 @@
                     <strong>twitter /fb /insta </strong> @taxi_app
                 </div>
 
-
                 <div class="address">
                     Taxi Station
                     <br>
@@ -135,6 +99,7 @@
         </div>
     </div>
 </body>
+<script src="taxiApp.js"></script>
 <script src="index.js"></script>
 
 </html>
